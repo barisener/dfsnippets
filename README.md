@@ -1,7 +1,5 @@
 # DFSnippets - VS Code Uzantısı
 
-![DFSnippets Örnek](screenshot.png)
-
 ## Genel Bakış
 
 DFSnippets, VS Code kullanıcıları için özel olarak oluşturulmuş bir snippet (parçaçık) koleksiyonudur. Bu snippet'ler, yazılım geliştirme sürecinizde sık kullandığınız kod kalıplarını hızlı bir şekilde eklemenizi sağlar.
