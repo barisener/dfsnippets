@@ -4,6 +4,7 @@
   "description": "",
   "publisher": "BarisSener",
   "version": "2.1.0",
+  "baseContentUrl": "https://github.com/barisener/dfsnippets",
   "engines": {
     "vscode": "^1.80.0"
   },

@@ -29,7 +29,7 @@ Kat contributionsınızı memnuniyetle karşılıyoruz! Uygun bir şekilde yeni 
 
 ## Lisans
 
-Bu proje, [MIT Lisansı](LICENSE) altında lisanslanmıştır.
+Bu proje, [MIT Lisansı] altında lisanslanmıştır.
 
 ---
 
