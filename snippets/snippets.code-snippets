@@ -15,6 +15,7 @@
   // 	],
   // 	"description": "Log output to console"
   // }
+  //TEMPLATES
   "Default Component": {
     "prefix": "vdefault",
     "body": [
@@ -64,5 +65,126 @@
       ""
     ],
     "description": "Default Vue 3 Component"
+  },
+
+  //PROVIDE INJECT
+  "Inject": {
+    "prefix": "vinject",
+    "body": ["const ${1:message} = inject(${1:'message'})"],
+    "description": "Inject"
+  },
+  "Provide": {
+    "prefix": "vprovide",
+    "body": ["provide('${1:'provideName'}', ${1:provide});"],
+    "description": "Provide"
+  },
+  //PROPS
+  "Define props": {
+    "prefix": "vprops",
+    "body": [
+      "const props = defineProps({",
+      "  ${1:prop1}: {",
+      "    type: ${2:Boolean},",
+      "    required: ${3:true},",
+      "    default: ${4:false},",
+      "  },",
+      "});"
+    ],
+    "description": "Define props"
+  },
+  "Define single prop": {
+    "prefix": "vprop",
+    "body": [
+      "  ${1:prop1}: {",
+      "    type: ${2:Boolean},",
+      "    required: ${3:true},",
+      "    default: ${4:false},",
+      "  }"
+    ],
+    "description": "Define single prop"
+  },
+  //EMITS
+  "Define emits as object": {
+    "prefix": "vemit",
+    "body": [
+      "const emit = defineEmits({",
+      "  ${1:submit}(${2:payload}) {",
+      "    ${3://Do something}",
+      "    // return `true` or `false` to indicate",
+      "  }",
+      "})"
+    ],
+    "description": "Define emits as object"
+  },
+  "Define emits as array": {
+    "prefix": "vemits",
+    "body": ["const emit = defineEmits([${1:'onFocus'}, ${1:'submit'}])"],
+    "description": "Define emits as array"
+  },
+  //VARIABLES
+  "Define ref": {
+    "prefix": "vref",
+    "body": ["const ${1:name} = ref(${2:initialValue})"],
+    "description": "Define ref"
+  },
+  //METHODS
+  "Define method": {
+    "prefix": "vmethod",
+    "body": [
+      "const ${1:methodName} = (${2:params}) => {",
+      "    ${3:doSomething}",
+      "};"
+    ],
+    "description": "Define method"
+  },
+  "Define function": {
+    "prefix": "vfunction",
+    "body": [
+      "const ${1:methodName} = (${2:params}) => {",
+      "    ${3:doSomething}",
+      "};"
+    ],
+    "description": "Define method"
+  },
+  //COMPUTED
+  "Define computed": {
+    "prefix": "vcomputed",
+    "body": [
+      "const ${1:now} = computed(() => {",
+      "  return ${2:Date.now()}",
+      "})"
+    ],
+    "description": "Define computed"
+  },
+  "Define writable computed": {
+    "prefix": "vwritable-computed",
+    "body": [
+      "const ${1:fullName} = computed({",
+      "  // getter",
+      "  get() {",
+      "    return ${2:firstName.value + ' ' + lastName.value}",
+      "  },",
+      "  // setter",
+      "  set(newValue) {",
+      "    // Note: we are using destructuring assignment syntax here.",
+      "   ${3: [firstName.value, lastName.value] = newValue.split(' ')}",
+      "  }",
+      "})"
+    ],
+    "description": "Define writable computed"
+  },
+  //WATCH
+  "Define watch": {
+    "prefix": "vwatch",
+    "body": [
+      "watch(",
+      "  () => ${1:foo},",
+      "  (newValue, oldValue) => {",
+      "    ${2:body}  ",
+      "  }",
+      ");",
+      ""
+    ],
+    "description": "Define watch"
   }
 }
