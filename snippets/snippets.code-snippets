@@ -187,5 +187,11 @@
       ""
     ],
     "description": "Define watch"
+  },
+  //MIXIN
+  "Import mixin": {
+    "prefix": "impmixin",
+    "body": ["import useMixin from 'src/composables/useMixins.js'"],
+    "description": "Import mixin"
   }
 }
