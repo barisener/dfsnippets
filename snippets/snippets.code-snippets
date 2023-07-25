@@ -251,7 +251,7 @@
   "Import Pinia Store": {
     "prefix": "ims",
     "body": [
-      "import { use${1/(.*)/${1:/pascalcase}/}Store } from '@/stores/${1:feature}';",
+      "import { use${1/(.*)/${1:/pascalcase}/}Store } from 'src/store/modules/${1:feature}';",
       "${2:const ${1/(.*)/${1:/camelcase}/}Store = use${1/(.*)/${1:/pascalcase}/}Store();}"
     ],
     "description": "Import a Pinia Store"
