@@ -4,37 +4,22 @@
 
 DFSnippets, VS Code kullanıcıları için özel olarak oluşturulmuş bir snippet (parçaçık) koleksiyonudur. Bu snippet'ler, yazılım geliştirme sürecinizde sık kullandığınız kod kalıplarını hızlı bir şekilde eklemenizi sağlar.
 
-## Özellikler
-
-- DFS algoritmasına yönelik sık kullanılan kod parçalarını içerir.
-- Özelleştirilmiş snippet isimleri ve tetikleyicileri sayesinde kolay kullanım sağlar.
-- Hızlı ve verimli geliştirme için optimize edilmiştir.
-
-## Nasıl Kullanılır
-
-1. VS Code'u açın ve "Extensions" sekmesine gidin.
-2. "DFSnippets" yazarak uzantıyı arayın ve yükleyin.
-3. Bir dosyada çalışırken, uygun bir kod parçasını eklemek için ilgili snippet tetikleyicisini kullanın (örn. "vdefault", "vcomputed", vb.).
-4. Snippet tetikleyicisini yazdıktan sonra "Tab" ya da "Enter" tuşuna basarak kod parçasını tamamlayın.
-
-## Katkıda Bulunma
-
-Kat contributionsınızı memnuniyetle karşılıyoruz! Uygun bir şekilde yeni snippet'ler eklemek, hataları düzeltmek veya belgeleri geliştirmek için lütfen çekme istekleri oluşturun.
-
-1. Bu projeyi kendi GitHub hesabınıza "fork"layın.
-2. Yeni bir dal (branch) oluşturun: `git checkout -b my-feature-branch`
-3. Değişikliklerinizi yapın ve bunları commit'leyin: `git commit -m 'Yeni snippet: dfswhile'`
-4. Dalınıza (branch) it push'layın: `git push origin my-feature-branch`
-5. Çekme isteği (pull request) oluşturun ve değişikliklerinizi açıklayın.
-
-## Lisans
-
-Bu proje, [MIT Lisansı] altında lisanslanmıştır.
-
----
-
-## Snippets
-
+| Prefix | Body |
+| ------- | ----------- |
+| vdefault | <template>,  <div>Component</div>,</template>,,<script setup>,import { ref, watch, computed } from 'vue';,import { useI18n } from 'vue-i18n',//#region Composables,const { t } = useI18n(),//#endregion,,//#region Injects,//#endregion,,//#region Props,//#endregion,,//#region Emits,//#endregion,,//#region Variables,//#endregion,,//#region Methods,//#endregion,,//#region Computed Properties,//#endregion,,//#region Watchers,//#endregion,,//#region Lifecycle Hooks,//#endregion,,//#region Created,//#endregion,,//#region Providers,//#endregion,,</script>,,<style lang="scss" scoped></style>, |
+| vinject | const ${1:message} = inject(${1:'message'}) |
+| vprovide | provide('${1:'provideName'}', ${1:provide}); |
+| vprops | const props = defineProps({,  ${1:prop1}: {,    type: ${2:Boolean},,    required: ${3:true},,    default: ${4:false},,  },,}); |
+| vprop |   ${1:prop1}: {,    type: ${2:Boolean},,    required: ${3:true},,    default: ${4:false},,  } |
+| vemit | const emit = defineEmits({,  ${1:submit}(${2:payload}) {,    ${3://Do something},    // return `true` or `false` to indicate,  },}) |
+| vemits | const emit = defineEmits([${1:'onFocus'}, ${1:'submit'}]) |
+| vref | const ${1:name} = ref(${2:initialValue}) |
+| vmethod | const ${1:methodName} = (${2:params}) => {,    ${3:doSomething},}; |
+| vfunction | const ${1:methodName} = (${2:params}) => {,    ${3:doSomething},}; |
+| vcomputed | const ${1:now} = computed(() => {,  return ${2:Date.now()},}) |
+| vwritable-computed | const ${1:fullName} = computed({,  // getter,  get() {,    return ${2:firstName.value + ' ' + lastName.value},  },,  // setter,  set(newValue) {,    // Note: we are using destructuring assignment syntax here.,   ${3: [firstName.value, lastName.value] = newValue.split(' ')},  },}) |
+| vwatch | watch(,  () => ${1:foo},,  (newValue, oldValue) => {,    ${2:body}  ,  },);, |
+| impmixin | import useMixin from 'src/composables/useMixins.js' |
 | prefix                     | body                                                                                                                                                                                                                                               | description                                                                   |
 |----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|
 | `pinia`, `cp`              | `import { createPinia } from 'pinia';`<br> `const pinia = createPinia();`<br> `app.use(pinia);`                                                                                                                                                    | **C**reate a **pinia** instance                                               |
@@ -53,4 +38,4 @@ Bu proje, [MIT Lisansı] altında lisanslanmıştır.
 | `store.$subscribe`, `ss`   | `featureStore.$subscribe((mutation, state) => {`<br> `  `<br> `});`                                                                                                                                                                                | Subscribing to state: **s**tore.$**s**ubscribe                                |
 | `store.$onAction`, `sa`    | `const unsubscribe = featureStore.$onAction(`<br> `  ({ name, store, args, after, onError }) => {`<br> `    `<br> `    after((result) => { });`<br> `    onError((error) => { });`<br> `  }`<br> `);`                                              | Subscribing to actions: **s**tore.$**o**nAction                               |
 | `store2composition `, `us` | `const featureStore = useFeatureStore();`                                                                                                                                                                                                          | Store @ Composition API, **u**seFeature**S**tore                              |
-| `store2option`, `uso`      | `setup() {`<br> `  const featureStore = useFeatureStore()`<br> `  return { featureStore }`<br> `},`                                                                                                                                                | Store @ Options API, **u**seFeature**S**tore     
+| `store2option`, `uso`      | `setup() {`<br> `  const featureStore = useFeatureStore()`<br> `  return { featureStore }`<br> `},`                                                                                                                                                | Store @ Options API, **u**seFeature**S**tore  
